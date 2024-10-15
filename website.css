@@ -1,0 +1,786 @@
+/* Add your styes here. */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica ;
+    /* border: 1px solid red; */
+}
+
+:root {
+    --first-color: #091057;
+    --second-color: #024CAA;
+    --third-color: #DBD3D3;
+    --fourth-color: #EC8305;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--first-color);
+    padding: 10px 40px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.main-nav nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.main-nav nav ul li {
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 25px;
+}
+
+.main-nav nav ul li:hover {
+    background-color: var(--second-color);
+    transform: scale(1.05);
+}
+
+.main-nav nav ul li a {
+    text-decoration: none;
+    color: var(--fourth-color);
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav nav ul li a:hover {
+    color: var(--third-color);
+}
+
+.yield {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+}
+
+.movie-info- {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info- a img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-info- a img:hover {
+    transform: scale(1.05);
+}
+
+.movie-info- .info {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-info- .info h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: var(--first-color);
+}
+
+.movie-info- .info p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.movie-info- .price {
+    font-size: 1.2em;
+    color: var(--second-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.movie-info- .price del {
+    color: #999;
+}
+
+.movie-info- ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.movie-info- ul li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.movie-info- .more-info-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: flex-start;
+}
+
+.movie-info- .more-info-button:hover {
+    background-color: var(--second-color);
+    transform: scale(1.05);
+}
+
+/* ------------------------Photo Gallery-------------------------------------- */
+
+.photo-gallery {
+    margin: 40px 0;
+}
+
+.photos-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.photos-list li {
+    flex: 1 1 calc(25% - 10px); /* 4 items per row with gap */
+    margin: 5px;
+}
+
+.photos-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.related-movies {
+    background-color: var(--first-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.related-movies h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.related-movies ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-movies li {
+    flex: 1 1 2;
+    margin: 5px;
+}
+
+.movie-cover {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.movie-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.movie-cover:hover img {
+    transform: scale(1.05);
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    margin-top: 5px;
+}
+
+/* -------------------------------Rental----------------------------- */
+#rental-dialog {
+    display: none;
+}
+#rental-dialog.show {
+    display: block;
+}
+
+.rental {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.rent-now {
+    background-color: var(--first-color);
+    font-size: 1.2em;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.rent-now:hover {
+    background-color: var(--second-color);
+    transform: scale(1.1);
+}
+
+#rental-dialog {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.ui {
+    text-align: right;
+}
+
+.ui a {
+    font-size: 1.2em;
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ui a:hover {
+    color: var(--first-color);
+}
+
+.rental-steps h3 {
+    font-size: 1.5em;
+    color: var(--first-color);
+    margin-bottom: 15px;
+}
+
+.rental-steps ul {
+    list-style-type: disc;
+    margin: 15px;
+    padding-left: 20px;
+}
+
+.rental-steps ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.login h3 {
+    font-size: 1.5em;
+    color: var(--first-color);
+    margin-bottom: 10px;
+}
+
+.login p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 0.9em;
+    margin-right: 10px;
+    color: var(--first-color);
+}
+
+input[type='email'], input[type='password'] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+input[type='submit'] {
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type='submit']:hover {
+    background-color: var(--second-color);
+}
+
+
+/* -----------------------------------------Upcoming Movies Index.html-------------------------------------------------- */
+
+.up-coming {
+    display: block;
+    background-color: var(--second-color);
+    padding: 30px 0;
+}
+
+.up-coming h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    border: 1px dotted aliceblue;
+    border-radius: 10px 15px;
+    padding: 10px;
+    margin: 0 250px;
+}
+
+.up-coming ul {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.up-coming li {
+    display: flex;
+    align-items: center;
+    background-color: var(--third-color);
+    padding: 15px 15px 15px 15px;
+    margin-bottom: 10px;
+    border-radius: 50px 10px;
+}
+
+.up-coming img {
+    height: 20em;
+    width: 13em;
+    border-radius: 40px 10px;
+}
+
+.up-coming li figcaption {
+    text-align: center;
+    color: var(--first-color);
+    font-size: larger;
+    padding-top: 10px;
+}
+
+/* ------------------------------------Recent Comments Index.html------------------------------------------------------ */
+
+.recent-comments {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.recent-comments h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comment {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.movie-name {
+    font-style: italic;
+}
+
+.movie-name a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.movie-name a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.content p {
+    margin: 0;
+}
+
+time {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.comment:hover {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* -------------------------------------Watch @HOME Part--------------------------------------------------------- */
+
+.watch-at-home {
+    background-color: var(--first-color);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.watch-at-home h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: var(--third-color);
+    margin-bottom: 20px;
+}
+
+.watch-at-home p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.browse-all-movies-button {
+    font-size: 1.1em;
+    background-color: var(--second-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s ease, transform 0.2s;
+}
+
+.browse-all-movies-button:hover {
+    background-color: var(--third-color);
+    transform: scale(1.1);
+    color: var(--first-color);
+}
+
+/* -----------------------------Index.html Footer-------------------------------------------------- */
+
+footer {
+    background-color: var(--second-color);
+    color: #ecf0f1;
+    padding: 20px 0;
+}
+
+.footer-help {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-help div {
+    flex: 1;
+    margin: 50px;
+    min-width: 200px;
+}
+
+.footer-help h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--fourth-color);
+}
+
+.newsletter form, .search form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter input, .search input {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter input[type='email'], .search input[type='text'] {
+    flex: 1;
+}
+
+.newsletter input[type='submit'], .search input[type='submit'] {
+    background-color: var(--fourth-color);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter input[type='submit']:hover, .search input[type='submit']:hover {
+    background-color: var(--fourth-color);
+}
+
+.back-to-top {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.back-to-top a {
+    color: var(--third-color);
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    text-align: center;
+}
+
+.footer-nav nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav nav ul li a {
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+.footer-nav nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------Contacts-------------------------------------------------- */
+
+.yield {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--first-color);
+}
+
+.label {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tabs a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #eaeaea;
+    color: #333;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.tabs a:hover, .tabs a.active {
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form p {
+font-style: italic;
+color: #777;
+margin-bottom: 10px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+fieldset input, fieldset textarea, fieldset select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+fieldset input[type="submit"] {
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
+
+fieldset input[type="submit"]:hover {
+    background-color: var(--second-color);
+}
+
+input[type='range'] {
+    width: 100%;
+}
+
+output {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* -----------------------------About.html-------------------------------- */
+
+.about h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--first-color);
+    text-align: center;
+}
+
+.about p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+}
+
+.locations h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--first-color);
+    text-align: center;
+}
+
+.locations p {
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.store-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.store-location img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.address {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.tel a {
+    font-size: 1.1em;
+    color: var(--second-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tel a:hover {
+    color: var(--first-color);
+}
+
+
+
+
+
